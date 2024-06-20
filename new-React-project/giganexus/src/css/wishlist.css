@@ -1,0 +1,121 @@
+.Wishlist-page {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+  .Wishlist-page  h1{
+    font-family: 'Rubik';
+    
+  }
+  .wishlist-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px;
+    justify-content: center;
+    padding: 20px;
+    background-color: #ece6e6;
+  }
+  
+  .wishlist-item {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+   
+    height: 400px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .wishlist-item:hover {
+   
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .wishlist-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+   
+  }
+  
+  .wishlist-item:hover .wishlist-img {
+    
+  }
+  
+  .wishlist-details {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .wishlist-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .wishlist-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .wishlist-price {
+    font-size: 1.2rem;
+    color: #e67e22;
+    margin-bottom: 20px;
+  }
+  
+  .wishlist-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .add-to-cart-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .wish-remove-btn {
+    margin-top: 2%;
+    padding: 10px 28px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .add-to-cart-btn {
+    background-color: #27ae60;
+    color: #fff;
+  }
+  
+  .add-to-cart-btn:hover {
+    background-color: #2ecc71;
+    transform: scale(1.05);
+  }
+  
+  .wish-remove-btn {
+    background-color: #e74c3c;
+    color: #fff;
+  }
+  
+  .wish-remove-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+  }
+
+  .wishlist-button-parent{
+    padding: 2%;
+    /* border: 1px solid yellow; */
+    display: flex;
+    width: 100%;
+    height: 90%;
+    justify-content: space-between;
+  }
+  

@@ -1,0 +1,472 @@
+.about-page{
+    height: 100vh;
+    width: 100%;
+    /* border: 1px solid black; */
+   
+    
+
+}
+.about-parent1{
+    display:  flex ;
+    align-items:center;
+    justify-content: center;
+    height:10%;
+    width: 100%;
+    /* border: 1px solid rgb(238, 121, 121); */
+}
+.about-parent1 p{
+    font-size: large;
+    margin-top: 5%;
+    font-family: 'Rubik';
+    font-weight: 600;
+}
+.about-parent-child{
+    height: 100%;
+    width: 20%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content:center;
+}
+.about-parent2{
+    display:  flex ;
+    align-items: center;
+    height:10%;
+    width: 100%;
+    /* border: 1px solid rgb(238, 121, 121); */
+}
+.about-parent2 p{
+    font-family: 'Rubik';
+    color: #4B4B4B;
+    font-weight: 500;
+}
+.about-parent3{
+    margin-left: 4%;
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+    height: 50%;
+    width: 95%;
+    /* border: 1px solid black; */
+}
+.about-parent3-child1{
+    padding: 1%;
+    height: 100%;
+    width: 60%;
+    /* border: 1px solid red; */
+}
+.about-parent3-child1 h2{
+    font-family: 'Rubik';
+    font-size: xx-large;
+
+}
+.about-parent3-child1 p{
+    font-size: large;
+    font-family: 'Rubik';
+    color: #4B4B4B;
+    font-weight:500;
+    
+}
+.about-parent3-child2{
+    margin-left: 1%;
+    height: 100%;
+    width: 35%;
+    /* border: 1px solid red; */
+    background-image: url(../assests/abimg2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.about-parent4{
+    height: 50%;
+    width: 100%;
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+.about-parent4 h1{
+    font-family: 'Rubik';
+}
+.about-parent4 h3{
+    margin-right: 78%;
+    font-family: 'Rubik';
+    font-weight: 700;
+}
+.about-parent4 p{
+    font-size: large;
+    font-family: 'Rubik';
+    color: #4B4B4B;
+    font-weight:500;
+}
+.about-parent4-child1{
+    height: 100%;
+    width: 23%;
+    /* border: 1px solid red; */
+    background-image: url(../assests/abimg3.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.about-parent4-child2{
+    padding: 1%;
+    height: 100%;
+    width: 77%;
+    /* border: 1px solid red; */
+}
+.about-parent4-child2 h3{
+    width: 27%;
+}
+.about-parent4-child2 h1{
+    margin-left: 0.5%;
+}
+.about-page2{
+    height: 100%;
+    width: 100%;
+    background-image: url(../assests/abbg22.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #515355;
+
+}
+.about-page2-parent{
+    border-radius: 2em;
+    height: 100%;
+    width: 95%;
+    border: 2px solid gray;
+    display: flex;
+    align-items: center;
+   
+}
+.about-page2-child1{
+  height: 95%;
+  width: 70%;
+  /* border: 1px solid rgb(189, 59, 59); */
+}
+.about-page2-child1 p{
+    margin-left: 2% ;
+    font-family: 'Rubik';
+    font-weight: 600;
+}
+.about-page2-child1-a{
+    /* border: 1px solid rgb(226, 96, 9); */
+    height: 5%;
+    width: 70;
+    display: flex;
+    align-items: center;
+}
+.about-page2-child1-a pre{
+    margin-left: 42%;
+    font-family: 'Rubik';
+    color: #D40404;
+    font-weight: 500;
+}
+
+.ab{
+    font-family: 'Rubik';
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1%;
+    height: 100%;
+    width: 20%;
+    background-image: linear-gradient(#0075FF,#06DFDF);
+    border-radius: 0.3em; 
+}
+.ac{
+    color: red;
+}
+.ad{
+    color: red;
+    margin-left: 15%;
+}
+.about-page2-child1-c{
+    
+    border-top: 2px solid #4B4B4B;
+    height: 85%;
+    width: 70;
+    display: flex;
+    align-items: center;
+  
+}
+.about-page2-child1-c-a{
+    font-weight: 600;
+    color: #4B4B4B;
+    font-family: 'Rubik';
+    padding: 1.5%;
+    margin: 1%;
+    border-radius: 1.5625em;
+    border: 1px solid #D0D0D0;
+    height: 90%;
+    width: 12%;
+}
+.about-page2-child1-c-a p{
+margin-top: 12%;
+}
+
+.about-page2-child1-c-b{
+    margin-left:4%;
+    /* border: 1px solid black; */
+    height: 90%;
+    width: 70%;
+}
+.cb-a{
+    margin: 3%;
+   display: flex;
+   align-items: center;
+    /* border: 1px solid black; */
+    height: 10%;
+    width: 97%;
+}
+.cb-aa{
+    
+    color: white;
+    /* border: 1px solid; */
+    border-radius: 50%;
+    height: 80%;
+    width: 5.5%;
+    background-image: linear-gradient(90deg,#4776E6 0%, #8E54E9 100%);
+}
+.a1{
+    
+    margin-left: 20%;
+}
+.a2{
+    margin-left: 35%;  
+}
+.a3{
+    margin-left: 55%;
+}
+.cb-aa h1{
+    font-family: 'Rubik';
+    margin-left: 30%;
+    margin-top: 15%;
+}
+.cb-bb{
+    font-family: 'Rubik';
+    padding: 1.5%;
+    border-radius: 7px;
+    border: 1px solid #0075FF;
+    background: linear-gradient(90deg, #0075FF 0%, #63EDBE 100%);
+    height: 92%;
+    width: 30%;
+
+}
+.about-page2-child1-c-bb{
+    /* border: 1px solid green; */
+    height: 35%;
+    width: 90%;
+    display: flex;
+   
+    justify-content: center;
+}
+.cb-b{
+    display: flex;
+    align-items: center;
+    border-radius: 1.5625em;
+    margin: 5%;
+    border: 1px solid #D0D0D0;
+    height: 60%;
+    width: 50%;
+}
+.cb-b p{
+    color: #4B4B4B;
+font-weight: 300;
+}
+
+.about-page2-side{
+    height: 95%;
+    width: 30%;
+    /* border: 1px solid rgb(12, 224, 23); */
+}
+.about-page2-side-a{
+    border-bottom:  5px solid #0075FF;
+    height: 5%;
+    width: 100%;
+}
+
+.about-page2-side-a h1{
+    color: #0075FF;
+    font-family: 'Rubik';
+    margin-left: 30%;
+}
+.about-page2-side-b{
+    font-family: 'Rubik';
+    padding: 5%;
+    border-bottom: 5px solid gray;
+    /* border: 1px solid rgb(226, 96, 9); */
+    height: 23%;
+    width: 100%;
+}
+.about-page2-side-b p{
+    color: #4B4B4B ;
+    font-weight: 400;
+}
+
+.about-page3{
+        height: 100%;
+        width: 100%;
+        background-image: url(../assests/abbbg25.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+}
+.about-page3-parent{
+    padding: 0.1%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 95%;
+    width: 95%;
+    /* border: 1px solid black; */
+}
+.about-page3-parent-child1{
+    height: 35%;
+    width: 60%;
+    /* border: 1px solid black; */
+}
+.about-page3-parent-child1 h1{
+    font-family: 'Rubik';
+    font-size: 250%;
+    font-weight: 700;
+
+}
+.about-page3-parent-child1 p{
+    font-size: larger;
+    font-family: 'Rubik';
+    color: #4B4B4B;
+}
+.about-page3-parent-child2{
+    margin-left: 7.5%;
+    background-image: url(../assests/ab3img1.png);
+    height: 50%;
+    width: 27%;
+    /* border: 1px solid rgb(202, 58, 58); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.about-page3-parent-child3{
+   height: 48%;
+   width: 30%;
+   /* border: 1px solid black; */
+   background-image: url(../assests/ab3img3.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+}
+.about-page3-parent-child4{
+    height: 35%;
+   width: 60%;
+   /* border: 1px solid rgb(211, 20, 20);  */
+}
+.about-page3-parent-child4 h1{
+    font-family: 'Rubik';
+    font-size: 250%;
+    font-weight: 700;
+}
+.about-page3-parent-child4 p{
+    font-size: larger;
+    font-family: 'Rubik';
+    color: #4B4B4B;
+}
+.about-page4{
+    height: 35%;
+    width: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+
+}
+.about-page4-parent{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 95%;
+    /* border: 1px solid green; */
+}
+.about-page4-child1{
+    height: 80%;
+    width: 40%;
+/* border: 1px solid black; */
+}
+.about-page4-child1 h1{
+    font-family: 'Rubik';
+    font-size: 250%;
+    font-weight: 700;
+}
+.about-page4-child1 p{
+    font-size: larger;
+    font-family: 'Rubik';
+    color: #4B4B4B;
+}
+.about-page4-child2{
+    height: 80%;
+    width: 40%;
+/* border: 1px solid black; */
+}
+.about-page4-child2 h1{
+    font-family: 'Rubik';
+    font-size: 250%;
+    font-weight: 700;
+}
+.about-page4-child2 p{
+    font-size: larger;
+    font-family: 'Rubik';
+    color: #4B4B4B;
+}
+.about-page5{
+    height: 80%;
+    width: 100%;
+    /* border: 1px solid rgb(109, 224, 15); */
+}
+.about-page5-child{
+    height: 6%;
+    width: 100%;
+    /* border: 1px solid green; */
+}
+.about-page5-child h1{
+    font-family: 'Rubik';
+    font-size: 200%;
+    margin-left: 42%;
+}
+.about-page5-child2{
+    margin-left: 20%;
+    height: 35%;
+    width: 58%;
+    /* border: 1px solid green; */
+    background-image: url(../assests/arrow.svg);
+    background-repeat: no-repeat;
+}
+.about-page5-child3{
+    margin-left: 20%;
+    display: flex;
+    height: 50%;
+    width: 70%;
+    /* border: 1px solid black; */
+}
+.about-page5-child3-a{
+    height: 50%;
+    width: 40%;
+    /* border: 1px solid black; */
+}
+.about-page5-child3-a h1{
+    font-family: 'Rubik';
+    font-size: 170%;
+    
+}
+.about-page5-child3-a p{
+font-size: larger;
+    font-family: 'Rubik';
+    color: #4B4B4B;
+}
+

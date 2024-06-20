@@ -1,0 +1,290 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+ .login-page{
+    width: 100%;
+    height: 100%;
+    background-image: url(../assests/bg2.svg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    background-repeat: no-repeat;
+    justify-content: flex-end;
+    /* for making scroling page provide relative */
+    /* position: relative; */
+} 
+.login-logo{
+    margin-bottom: 1%;
+    /* border: 1px solid; */
+    width: 25%;
+    height: 35%;
+    background-image: url(../assests/logo1.png);
+    background-size: cover;
+    background-position: center;
+} 
+.appname{
+    font-size: 250%;
+    font-weight: 500;
+    font-family: "Rubik";
+    color:black;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+.login-form h2{
+    margin-left: 20%;
+    margin-top:4%;
+    font-family:sans-serif;
+    color: #4B4B4B;
+    width: 200px;
+    /* border: 1px solid black; */
+    font-size: large;
+    font-weight: 350;
+    
+} 
+.appslogan{
+  margin-left: 4%;
+    /* border: 1px solid black; */
+    font-family: "Rubik";
+    font-weight: 300;
+} 
+
+ .login-logo-slogan{
+    margin-top: 6%;
+    margin-right: 10%;
+    width: 380px;
+    height: 350px;
+    /* border: 1px solid; */
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-wrap: wrap;
+} 
+ .login-form{
+  /* border: 1px solid black; */
+    margin-left: 15px;
+    width: 300px;
+    height: 290px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+   
+} 
+.login-form h4{
+ width: 100%;
+ /* border: 1px solid black; */
+ display: flex;
+ justify-content: center;
+}
+ .login-input{
+  padding: 10px;
+  width: 100%;
+   border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 2px 2px 2px 2px lightseagreen;
+ 
+} 
+.login-input::placeholder{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    font-size: medium;
+} 
+.login-btn{
+  margin-top: 2%;
+width: 47%;
+padding: 4%;
+border-radius: 0.6em;
+border: none;
+background-image: linear-gradient( to left,#6FB1FC,#4364F7,#0052D4);
+color: white;
+transition: 0.3s;
+}
+.login-btn:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.acc-btn{
+
+    width: 12em;
+    padding: 7%;
+    border-radius: 0.6em;
+    border: none;
+    background-image: linear-gradient( to left,#6FB1FC,#4364F7,#0052D4);
+    color: white;
+    transition: 0.3s;
+}
+.acc-btn:hover{
+    transform: scale(1.1);
+}
+.login-socical{
+    font-size: 30px;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.login-socical-icon{
+    margin-left: 10px;
+    color: inherit;
+    text-decoration: none;
+}
+.login-socical-icon:hover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10%;
+} 
+ .store-icon{
+    overflow: hidden;
+    margin: 5%;
+    height: 50%;
+    width: 80%;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.store-icon {
+    border: none;
+    width: 20em;
+    height: 10em;
+    /* border: 1px solid black; */
+    /* border-radius:1em;
+    height: 5em ;
+    width: 8em;
+    border: none;
+    background-image: linear-gradient( to left,#6FB1FC,#4364F7,#0052D4);
+    color: white; */
+}
+
+
+
+/* for making scroling page provide relative 
+  #lroem{
+    position: absolute;
+    margin-top: 1000px;
+} */
+
+
+.download{
+	width: 9em;
+	height: 4em;
+	background: linear-gradient(90deg, #0052D4 0%, #4364F7 50%, #6FB1FC 100%);
+	float: left;
+	border-radius: 0.6em;
+	position: relative;
+	color: #fff;
+	cursor: pointer;
+	border: none;
+    transition: 0.3s;
+}
+.download:hover{
+    transform: scale(0.9);
+}
+.download .fa{
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 15%;
+	transform: translate(-50%, -50%);
+}
+.p1, .p2{
+	position: relative;
+	left: 45%;
+}
+.p1{
+	top: 35%;
+	font-size: 12px;
+}
+.p2{
+	top: 35%;
+	font-size: 16px;
+}
+.download:hover{
+	filter: invert(100%);
+}
+
+
+ /* Add to your login.css file */
+
+.login-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    animation: popupAnimation 0.3s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .login-popup.success {
+    border-left: 10px solid #4caf50; /* Green for success */
+  }
+  
+  .login-popup.error {
+    border-left: 10px solid #f44336; /* Red for error */
+  }
+  
+  .login-popup-content {
+    position: relative;
+    width: 100%;
+  }
+  
+  .login-popup-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #aaa;
+  }
+  
+  .login-popup-content .close:hover {
+    color: #000;
+  }
+  
+  .login-popup-content p {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .login-popup-content .icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  @keyframes popupAnimation {
+    from {
+      transform: translate(-50%, -50%) scale(0.5);
+      opacity: 0;
+    }
+    to {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Add some padding and margin to the main container */
+  /* .login-page {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+  } */
+  

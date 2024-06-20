@@ -1,0 +1,340 @@
+.landing-page {
+    height: 100%;
+    width: 100%;
+    background-color: #C9D9E2;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-y: hidden;
+}
+
+.landing-page#blur.active {
+    filter: blur(5px);
+}
+
+.container1-title {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.landing-page p {
+    color: white;
+    font-weight: 400;
+    font-size: medium;
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+.parent1, .parent2, .parent3 {
+    margin-top: 0.5%;
+    height: 30%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.child1 {
+    box-shadow: 0px -25px 20px -20px rgba(74,144,226,1),
+                25px 0px 20px -20px rgba(74,144,226,1),
+                0px 25px 20px -20px rgba(74,144,226,1),
+                -25px 0px 20px -20px rgba(74,144,226,1);
+    border-radius: 0.6em;
+    background-color: white;
+    height: 87%;
+    width: 10%;
+    transition: 0.2s;
+}
+
+.child1:hover {
+    transform: scale(1.1);
+}
+
+.child1#blur.active {
+    filter: blur(20px);
+}
+
+.card-box1 {
+    margin-top: 1%;
+    margin-left: 10%;
+    height: 52%;
+    width: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.card-box1 img {
+    height: 100%;
+    width: 95%;
+}
+
+.card-box2 {
+    margin-left: 6%;
+    font-size: large;
+    font-family: "Rubik";
+    font-weight: 600;
+    color: black;
+    height: 8%;
+    width: 100%;
+}
+
+.card-box3 {
+    margin-left: 6%;
+    margin-top: 4%;
+    font-size: small;
+    font-family: "Rubik";
+    color: #6D6B6B;
+    height: 8%;
+    width: 100%;
+}
+
+.card-box4 {
+    margin-top: 4%;
+    display: flex;
+    justify-content: center;
+}
+
+.card-box4 .child4-a {
+    height: 10%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0075FF;
+}
+
+.card-box4 .child4-b {
+    font-family: "Rubik";
+    height: 100%;
+    width: 80%;
+}
+
+.child4-c {
+    cursor: pointer;
+    font-family: 'Rubik';
+    margin-left: 15%;
+    border-radius: 0.3em;
+    color: white;
+    height: 12%;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.child4-c button {
+    background-color: black;
+    color: white;
+    height: 100%;
+    width: 98%;
+    border-radius: 0.5em;
+    border: none;
+}
+
+.child4-c button:hover {
+    cursor: pointer;
+    background-color: wheat;
+    color: black;
+}
+
+.card-box5 {
+    margin-top: -15%;
+    margin-left: 84.8%;
+    border-radius: 0.3em;
+    height: 15%;
+    width: 15%;
+    background-color: white;
+}
+
+.heartlogo-box5 {
+    margin-top: 10%;
+    margin-left: 84.8%;
+    border-radius: 0.3em;
+    height: 15%;
+    width: 15%;
+    background-color: white;
+}
+
+/* Popup styles */
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 60%;
+    width: 60%;
+    padding: 2%;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 1;
+    border-radius: 1em;
+}
+
+#popup.active {
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.popup-parent {
+    margin-left: 1%;
+    height: 98%;
+    width: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.popup-button {
+    margin-left: 35%;
+    background-color: #FB641B;
+    color: white;
+    height: 9%;
+    width: 20%;
+    border-radius: 0.5em;
+    border: none;
+}
+
+.popup-button:hover {
+    cursor: pointer;
+    background-color: wheat;
+    color: black;
+}
+
+.popup-child {
+    margin-top: -3%;
+    height: 90%;
+    width: 40%;
+}
+
+.popup-img {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.popup-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.magnifier {
+    position: absolute;
+    border: 2px solid #000;
+    border-radius: 10%;
+    cursor: none;
+    width: 30%;
+    height: 30%;
+    overflow: hidden;
+    display: none;
+}
+
+.magnifier img {
+    position: absolute;
+    width: 500%;
+    height: 500%;
+}
+
+.popup-brand {
+    font-family: 'Rubik';
+    font-size: x-small;
+    color: #4B4B4B;
+}
+
+.popup-brand-name {
+    font-family: 'Rubik';
+    color: black;
+    font-size: small;
+}
+
+.popup-child2 {
+    margin-top: -3%;
+    height: 90%;
+    width: 50%;
+}
+
+.popup-child2 h2 {
+    font-family: 'Rubik';
+}
+
+.price-box {
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.popup-box2 {
+    height: 100%;
+    width: 40%;
+    font-family: 'Rubik';
+    font-weight: 500;
+    display: flex;
+}
+
+.popup-rating {
+    height: 100%;
+    width: 30%;
+    background-image: url(../assests/ratting2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.popup-addtocart {
+    height: 100%;
+    width: 30%;
+    margin: 1%;
+}
+
+.popup-addtocart button {
+    padding: 5%;
+    width: 100%;
+    background-color: #FF9F00;
+    color: white;
+    font-family: 'Rubik';
+    font-size: large;
+    border: none;
+    border-radius: 0.2em;
+}
+
+.popup-addtocart button:hover {
+    cursor: pointer;
+    background-color: wheat;
+    color: black;
+}
+
+.rs-symbole {
+    font-size: x-large;
+    margin-top: 1%;
+    height: 100%;
+    width: 15%;
+}
+
+.popup-price {
+    font-size: x-large;
+}
+
+.popup-child2 h4 {
+    font-family: 'Rubik';
+    text-decoration: underline;
+}
+
+.popup-child2 p {
+    font-size: medium;
+    color: #6D6B6B;
+}
+
+.popup-child2 h5 {
+    font-size: medium;
+    font-family: 'Rubik';
+    text-decoration: underline;
+}
+

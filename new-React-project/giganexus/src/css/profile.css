@@ -1,0 +1,96 @@
+.profile-page{
+    height: 100%;
+    width: 100%;
+    background-image: url(../assests/profilebg.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-parrent{
+    padding: 1%;
+    border-radius: 2em;
+    height: 92%;
+    width: 92%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(225,225,225, .2);
+    box-shadow: 0 0 10px rgba(0,0,0, .2);
+    background: transparent;
+    backdrop-filter: blur(10px); 
+}
+.profile-img{
+    background-image: url(../assests/profileimg2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 45%;
+    /* border: 1px solid yellow; */
+   
+}
+.profile-details{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 45%;
+    /* border: 1px solid blue;  */
+}
+.user-profile{
+    height: 22%;
+    width: 20%;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+.profile-details-child{
+    height: 78%;
+    width: 100%;
+    /* border: 1px solid; */
+    
+}
+.profile-details-child-a{
+    font-size: 1em;
+    font-family: 'Rubik';
+    font-weight: normal;
+
+} 
+.profile-details-child-b{
+    margin-top: 1%;
+    margin-left: 34%;
+    font-size: 2em;
+    font-family: 'Rubik';
+    font-weight: normal;
+}
+.profile-details-child-c{
+    margin-top: 1%;
+    margin-left: 34%;
+    font-size: 1.2em;
+    font-family: 'Rubik';
+    font-weight: normal;
+    color: #4B4B4B;
+}
+.back-shopping{
+    margin-top: 23%;
+    height: 10%;
+    /* border: 1px solid black; */
+}
+.back-shopping button{
+   margin-left: 25%;
+    font-size: larger;
+    color: white;
+    height: 80%;
+    width: 50%;
+    border: none;
+    border-radius: 0.2em;
+    background: linear-gradient(90deg, #3f79d6 0%, #4364F7 50%, #6FB1FC 100%);
+    transition: 0.4s;
+}
+.back-shopping button:hover{
+    background: linear-gradient(90deg,white 0%, #e4e5ec 50%, #e1e5eb 100%);
+    color: black;
+    transform: scale(1.1);
+}

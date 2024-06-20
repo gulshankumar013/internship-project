@@ -1,0 +1,54 @@
+.customize2{
+    height: 80%;
+    width: 100%;
+    /* border: 1px solid black; */
+    background-image: url(../assests/customizebg.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.customize2-parent{
+    /* border: 1px solid red; */
+    width: 21%;
+    height: 20%;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background: #FAF9F6;
+    transition: 0.3s;
+}
+.customize2-parent:hover{
+    transform: scale(1.1);
+}
+.customize2-parent-child1{
+    margin-top: 5%;
+    margin-left: 2%;
+    font-weight: 500;
+    font-family: 'Rubik';
+    padding: 2%;
+    display: flex;
+    /* border: 1px solid black; */
+    height: 30%;
+    width: 50%;
+}
+.customize2-parent-child2{
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5%;
+    /* border: 1px solid black; */
+    height: 25%;
+    width: 100%;
+}
+.customize2-parent-child2-b button{
+    height: 2em;
+    width: 3em;
+}
+.processor{
+    color: #0075FF;
+    height: 2em;
+    width: 2em;
+}

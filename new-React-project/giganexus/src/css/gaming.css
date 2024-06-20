@@ -1,0 +1,116 @@
+.gaming-body{
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1%;
+}
+.gaming-child1{
+    display: flex;
+    align-items: center;
+    width: 98%;
+    height: 30%;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background:#FAF9F6;
+    box-shadow: 3px 4px 16px 0px rgba(0, 93, 255, 0.25);
+    transition: 0.3s;
+}
+.gaming1-child1:hover{
+    transform: scale(1.1);
+}
+
+.gaming1a{
+    /* border: 1px solid black; */
+    height: 100%;
+    width: 60%;
+}
+
+.gaming1-child1-a{
+    display: flex;
+    margin: 0.5%;
+    margin-left:4% ;
+    /* border: 1px solid black; */
+    height: 20%;
+    width: 35%;
+}
+.gaming1-child1-a h4{
+    margin-right: 2%;
+    color: #0075FF;
+    font-family: 'Rubik';
+    font-size:2em;
+}
+.gaming1-child1-b{
+    margin: 0.5%;
+    margin-left:4% ;
+    /* border: 1px solid black; */
+    height: 15%;
+    width: 100%;
+}
+.gaming1-child1-b p{
+    font-family: 'Rubik';
+    color: #4B4B4B;
+    font-weight: 500;
+}
+.gaming1-child1-d{
+    display: flex;
+    margin-left:4% ;
+    /* border: 1px solid black; */
+    height: 13%;
+    width: 15%;
+}
+.gaming1-child1-d1{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 18%;
+    /* border: 1px solid black; */
+}
+.gaming1-child1-d2{
+    height: 100%;
+    width: 70%;
+    /* border: 1px solid black;   */
+}
+.gaming1-child1-e{
+    margin-top: 1%;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:4% ;
+    height: 15%;
+    width: 16%;
+}
+.gaming1-child1-e button {
+    height: 95%;
+    width: 100%;
+    cursor: pointer;
+    background-color: #0075FF;
+    color: white;
+    font-family: 'Rubik';
+    border-radius: 0.3em;
+    border: none;
+}
+.gamaing1b{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    /* border: 1px solid black; */
+    height: 100%;
+    width: 60%;
+    
+}
+.gaming-img{
+    border: 1px solid black;
+    height: 80%;
+    width: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.gaming-img img{
+    height: 50%;
+    width: 50%;
+}

@@ -1,0 +1,53 @@
+/* src/components/adminLogin.css */
+
+.Admin-Login {
+    height: 100vh; /* Adjusted to full viewport height */
+    width: 100%; /* Adjusted to full viewport width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #61A7F6 0%, #78B2F3 50%, #EA78E5 100%); /* Added background color for better contrast */
+}
+
+.Admin-Login-child{
+    height: 60%;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid  #ccc;
+    background-color: white;
+    border: 1px solid #949191;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.login-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    /* border: 1px solid #ccc; */
+    border-radius: 8px;
+    background-color: #fff;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    width: 35%;
+     /* Added max-width for better centering */
+}
+
+.Admin-Loginimg{
+height: 47%;
+width: 32%;
+background-image: url(../assests/dashbg.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.error-message {
+    color: red;
+    margin-top: 0.5rem; /* Added margin for spacing */
+    font-size: 0.875rem; /* Adjusted font size for better readability */
+}
+.adminlogin {
+    width: 65%;
+}
