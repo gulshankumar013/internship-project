@@ -77,11 +77,12 @@ const DasMain = () => {
 
   const showLogoutPopup = () => {
     setLogoutPopupVisible(true);
-    sessionStorage.clear('email');
+   
   };
 
   const handleLogoutConfirm = () => {
     // Redirect to landing page
+    sessionStorage.clear('email');
     navigate("/");
   };
 

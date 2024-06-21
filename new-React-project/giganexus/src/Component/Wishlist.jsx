@@ -6,8 +6,8 @@ const Wishlist = ({wishlist,addToCart, setWishlist}) => {
 
    const usenavigate = useNavigate();
    useEffect(()=>{
-       let email = sessionStorage.getItem('email')
-       if(email==='' || email===null){
+       let userData = sessionStorage.getItem('userData')
+       if(userData==='' || userData===null){
            usenavigate("/login");
        }
    },[]);

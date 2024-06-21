@@ -101,7 +101,7 @@ const AdminLoginPage = () => {
           </Box>
          
         </form><br />
-        <Link to={"/adminSignup"}><p>Dont have an Account?</p></Link>
+        <Link><p>Forgot password?</p></Link>
       </div>
       </div>
     </div>

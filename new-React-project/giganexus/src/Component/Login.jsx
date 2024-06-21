@@ -205,7 +205,7 @@ const Login = () => {
 
         setTimeout(() => {
           setShowPopup(false);
-          navigate("/profile");
+          navigate("/");
         }, 1000); // Redirect after 1 second
       } else {
         setPopupMessage('Invalid email or password!');

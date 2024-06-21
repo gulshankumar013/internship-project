@@ -15,12 +15,21 @@ const Nav = ({ count, countwish }) => {
 //this is use for logout and clear the local stroage when user logout
   const navigate = useNavigate()
   const handellogout = () =>{
-    sessionStorage.clear();
+    sessionStorage.clear('userData');
     navigate("/");
-
   }
 
-  return (
+  let handelAdmin =()=>{
+    let email = sessionStorage.getItem('email')
+
+        if(email=== "" || email===null){
+          navigate("/adminLogin");
+        }
+        else{
+          navigate("/dasbord");
+        }
+  }
+    return (
     <>
       <section className='nav-section'>
         <nav className='navbar-img'>
@@ -34,14 +43,15 @@ const Nav = ({ count, countwish }) => {
           </ul>
            
           <div className='dropdown' onMouseEnter={handleDropdownToggle} onMouseLeave={handleDropdownToggle}>
-            {sessionStorage.getItem("email")
+            {sessionStorage.getItem("userData")
               ? <button className='dropbtn' onClick={handellogout}>Logout</button>
               :<button className='dropbtn'>Login</button>
             }
                 {dropdownVisible && (
                   <div className='dropdown-content'>
                     <Link to={"/login?role=user"}>User</Link>
-                    <Link to={"/adminLogin?role=admin"}>Admin</Link>
+                    {/* <Link to={"/adminLogin?role=admin"}>Admin</Link> */}
+                    <button className='dropdown-content-a' onClick={()=>{handelAdmin()}}>Admin</button>
                   </div>
                 )}
             </div>

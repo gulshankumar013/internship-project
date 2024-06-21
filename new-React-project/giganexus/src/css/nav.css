@@ -162,7 +162,8 @@ cursor: pointer;
    display: none;
    position: absolute;
    background-color: #f9f9f9;
-   min-width: 140px;
+   height: 250%;
+   min-width: 100px;
    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
    z-index: 1;
    border-radius: 10px;
@@ -173,6 +174,7 @@ cursor: pointer;
    padding: 12px 16px;
    text-decoration: none;
    display: block;
+   
  }
  
  .dropdown-content a:hover {
@@ -188,4 +190,27 @@ cursor: pointer;
  .dropdown:hover .dropbtn {
    color: white;
  }
+ 
+ .dropdown-content-a{
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 10px;
+  color: black;
+  padding: 12px 10px;
+  text-decoration: none;
+  display: block;
+  border: none;
+  text-align: left;
+  font-size: medium;
+  font-family: "Rubik";
+  
+}
+.dropdown-content-a:hover{
+  background-color:black;
+  color: white;
+  border-radius: 10px;
+}
  
