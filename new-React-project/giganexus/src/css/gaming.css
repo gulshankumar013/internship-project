@@ -12,9 +12,8 @@
     align-items: center;
     width: 98%;
     height: 30%;
-    flex-shrink: 0;
     border-radius: 18px;
-    background:#FAF9F6;
+    background:white;
     box-shadow: 3px 4px 16px 0px rgba(0, 93, 255, 0.25);
     transition: 0.3s;
 }
@@ -96,16 +95,16 @@
 .gamaing1b{
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: center;
     /* border: 1px solid black; */
     height: 100%;
     width: 60%;
     
 }
 .gaming-img{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 80%;
-    width: 60%;
+    width:50%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
