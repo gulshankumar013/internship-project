@@ -9,7 +9,7 @@ const Customizehedder = () => {
   return (
     <>
       <div className="cutomizehedder">
-        <NavLink to={"/customize/hedder/customize1"}>
+        <NavLink to={"/customize/"}>
           <div className="cutomizehedder-child1">
                 <div className="cutomizehedder-child1-name"><h1>Our Top Pick For you</h1></div>
                 <div className="cutomizehedder-child1-img"></div>

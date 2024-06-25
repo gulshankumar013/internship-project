@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { RouterProvider, createBrowserRouter} from 'react-router-dom';
+import { Navigate, RouterProvider, createBrowserRouter} from 'react-router-dom';
 import Home from './Component/Home';
 import Login from './Component/Login';
 import Signup from './Component/Signup';
@@ -24,7 +24,7 @@ import Payment from './Component/Pyment';
 import ContactUs from './Component/ContactUs';
 import DashMain from './Dashbord/DashMain';
 import AdminLoginPage from './Dashbord/AdminLoginPage';
-import AddProduct from './Dashbord/AddHomeProduct';
+import AddProduct from './Dashbord/AddBestSellingProduct';
 import DashbordHome from './Dashbord/DashbordHome';
 import AddCoustomizeProduct from './Dashbord/AddCoustomizeProduct';
 import AddProductCategories from './Dashbord/AddProductCategories';
@@ -39,6 +39,8 @@ import UserDetails from './Dashbord/UserDetails';
 import AdminSignup from './Dashbord/AdminSignup';
 import AdminDetails from './Dashbord/AdminDetails';
 import { Bounce, ToastContainer } from 'react-toastify';
+import AddTrendingProduct from './Dashbord/AddTrendingProduct';
+import AddOfferOnTopBrandProduct from './Dashbord/AddOfferOnTopBrandProduct';
 
 
 
@@ -117,8 +119,9 @@ const App = () => {
       name: 'SSD M.2',
       brand:'Corsair',
       description: 'Corsair MP600',
-      about:"This the Cabinate for gammer or workstation",
-      price: 10917
+      about:"Extreme Gen4 Storage Performance on PS5: Expand your PS5 storage capacity with a PCIe Gen4 x4 SSD that delivers up to 7,100MB/sec sequential read and 5,800MB/sec sequential write speeds.",
+      price: 10917,
+      Specifications:""
     },
     {
       url: 'cardimage8.svg',
@@ -236,12 +239,9 @@ const App = () => {
           path:"/customize",
           element:<Customize/>,
           children:[
+            
             {
-              path:"/customize/hedder",
-              element:<Customizehedder/>
-            },
-            {
-                path:"/customize/hedder/customize1",
+                path:"/customize/",
                 element:<Customize1/>
             },
             {
@@ -332,6 +332,14 @@ const App = () => {
         {
           path:"/dasbord/addproduct",
           element:<AddProduct/>
+        },
+        {
+          path:"/dasbord/addTrendingProduct",
+          element:<AddTrendingProduct/>
+        },
+        {
+          path:"/dasbord/addOfferOnTopbrand",
+          element:<AddOfferOnTopBrandProduct/>
         },
         {
           path:"/dasbord/addproductCoustomize",

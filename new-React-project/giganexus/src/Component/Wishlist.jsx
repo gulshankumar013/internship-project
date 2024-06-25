@@ -33,7 +33,7 @@ const Wishlist = ({wishlist,addToCart, setWishlist}) => {
                     <div className='wishlist-item' key={wishlist.id}>
                         
                         <div className="wishlist-details">
-                        <img src={wishlistItem.url} alt={wishlistItem.name}   className="wishlist-img"/> </div>
+                        <img src={wishlistItem.image} alt={wishlistItem.name}   className="wishlist-img"/> </div>
                     <div className='wishlist-name'>{wishlistItem.name}</div>
                     <div className='wishlist-description'>{wishlistItem.description}</div>
                     <div className='wishlist-price'>{wishlistItem.price}</div>

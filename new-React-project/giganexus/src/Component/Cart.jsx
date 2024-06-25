@@ -37,7 +37,7 @@ const removeFromCart = (index) => {
                         return (
                             <div key={cartIndex} className='page'>
                                 <div className='page-child'>
-                                    <img src={cartItem.url} alt="" />
+                                    <img src={cartItem.image} alt="" />
                                     <div className="item-details">
                                         <span className="item-name">{cartItem.name}</span><br />
                                         <span className="item-description">{cartItem.discription}</span>

@@ -6,7 +6,11 @@ import { FaIndianRupeeSign } from "react-icons/fa6";
 import { CiHeart } from "react-icons/ci";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
+
+const api = "http://localhost:5164/fetchTechnexusCard";
+const trandingApi = "http://localhost:5164/fetchTrandingProduct";
 
 
 const divStyle = {
@@ -82,6 +86,65 @@ const Landing = ({ product, trending, brand, addToCart, addToWishlist }) => {
     }
   }
 
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    bestSelling();
+  }, []);
+
+  const bestSelling = async () => {
+    try {
+      const response = await axios.post(api, { eventID: "1001" });
+      console.log("API Response:", response.data); // Log the entire response
+      if (response.status === 200) {
+        const responseData = response.data;
+        if (responseData.rData && responseData.rData.users) {
+          setUsers(responseData.rData.users);
+          console.log("Users:", responseData.rData.users);
+        } else {
+          console.log("No users data in response");
+        }
+      }
+    } catch (error) {
+      console.error("Error fetching users:", error);
+    }
+  };
+
+  const handleImage = (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setFormData({
+        ...formData, image: reader.result,
+      });
+    };
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  };
+  const [trendingProduct, setTrendingProduct] = useState([]);
+  useEffect(() => {
+    trandingProduct();
+  }, []);
+
+  const trandingProduct = async () => {
+    try {
+      const response = await axios.post(trandingApi, { eventID: "1001" });
+      console.log("API Response:", response.data); // Log the entire response
+      if (response.status === 200) {
+        const responseData = response.data;
+        if (responseData.rData && responseData.rData.users) {
+          setTrendingProduct(responseData.rData.users);
+          console.log("Users:", responseData.rData.users);
+        } else {
+          console.log("No users data in response");
+        }
+      }
+    } catch (error) {
+      console.error("Error fetching users:", error);
+    }
+  };
+
   return (
     <>
       <div className="slide-container">
@@ -108,9 +171,9 @@ const Landing = ({ product, trending, brand, addToCart, addToWishlist }) => {
                   <div className="popup-brand"><h2>Brand</h2></div>
                   <div className="popup-brand-name"><h1>{popupData.brand}</h1></div>
                   <div className="popup-img" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
-                    <img src={popupData.url} alt={popupData.name} />
+                    <img src={popupData.image} alt={popupData.name} />
                     <div className="magnifier" ref={magnifierRef}>
-                      <img src={popupData.url} alt={popupData.name} />
+                      <img src={popupData.image} alt={popupData.name} />
                     </div>
                   </div>
                   <div className="price-box">
@@ -127,7 +190,7 @@ const Landing = ({ product, trending, brand, addToCart, addToWishlist }) => {
                 <div className="popup-child2">
                   <h2>{popupData.name}</h2>
                   <div>
-                    <p>{popupData.description}</p>
+                    <p>{popupData.discription}</p>
                     <br />
                   </div>
                   <div>
@@ -137,7 +200,7 @@ const Landing = ({ product, trending, brand, addToCart, addToWishlist }) => {
                   <div>
                     <br />
                     <h5>Specifications</h5>
-                    <p>{popupData.Specifications}</p>
+                    <p>{popupData.specifications}</p>
                   </div>
                 </div>
               </>
@@ -152,11 +215,11 @@ const Landing = ({ product, trending, brand, addToCart, addToWishlist }) => {
           <p>Best Selling</p>
         </div>
         <div className="parent1">
-          {product.map((productItem, productIndex) => (
+          {users.map((productItem, productIndex) => (
             <div onClick={() => toggle(productItem)} className="child1" key={productIndex}>
-              <div className="card-box1"><img src={productItem.url} alt="" /></div>
+              <div className="card-box1"><img src={productItem.image} alt="cabinate" /></div>
               <div className="card-box2">{productItem.name}</div>
-              <div className="card-box3">{productItem.description}</div>
+              <div className="card-box3">{productItem.discription}</div>
               <div className="card-box4">
                 <div className="child4-a"><FaIndianRupeeSign /></div>
                 <div className="child4-b">{productItem.price}</div>
@@ -171,17 +234,17 @@ const Landing = ({ product, trending, brand, addToCart, addToWishlist }) => {
           <p>Trending Products</p>
         </div>
         <div className="parent2">
-          {trending.map((productItem, productIndex) => (
+          {trendingProduct.map((productItem, productIndex) => (
             <div onClick={() => toggle(productItem)} className="child1" key={productIndex}>
-              <div className="card-box1"><img src={productItem.url} alt="" /></div>
+              <div className="card-box1"><img src={productItem.image} alt="" /></div>
               <div className="card-box2">{productItem.name}</div>
-              <div className="card-box3">{productItem.description}</div>
+              <div className="card-box3">{productItem.discription}</div>
               <div className="card-box4">
                 <div className="child4-a"><FaIndianRupeeSign /></div>
                 <div className="child4-b">{productItem.price}</div>
               </div>
               <div className="child4-c"><button onClick={(e) => { e.stopPropagation(); addToCart(productItem); }}>Add to Cart</button></div>
-              <div className="card-box5"><a style={{ color: '#0075FF' }} href=""><CiHeart style={{ fontSize: '30px' }} /></a></div>
+              <div className="card-box5"><Link style={{ color: '#0075FF' }} href=""><CiHeart style={{ fontSize: '30px' }} onClick={()=>{addToWishlist(productItem)}} /></Link></div>
             </div>
           ))}
         </div>

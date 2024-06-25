@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "../css/gaming.css";
 import { FaIndianRupeeSign } from 'react-icons/fa6';
+import Footer from './Footer';
 
 
 const Gaming = () => {
@@ -89,6 +90,7 @@ const Gaming = () => {
           ))
         }
       </div>
+      <Footer/>
     </>
   )
 }
