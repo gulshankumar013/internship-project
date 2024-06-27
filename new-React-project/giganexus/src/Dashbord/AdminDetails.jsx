@@ -4,9 +4,9 @@ import axios from "axios";
 import "../Dashbord/contactusMessage.css";
 import { useNavigate } from "react-router-dom";
 
-const API = "http://localhost:5164/fetchAllAdmin"; // Assuming this endpoint is correct
-const DELETE_API = "http://localhost:5164/deleteGiganexusAdmin"; // New endpoint for deleting user
-const UPDATE_API = "http://localhost:5164/updateGiganexusAdmin"; // New endpoint for updating user
+const API = "http://localhost:5164/fetchAllAdmin"; 
+const DELETE_API = "http://localhost:5164/deleteGiganexusAdmin"; 
+const UPDATE_API = "http://localhost:5164/updateGiganexusAdmin"; 
 
 const AdminDetails = () => {
   const usenavigate = useNavigate();

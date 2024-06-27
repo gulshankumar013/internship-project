@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 const Cart = ({cart,setCart}) => {
 
     const usenavigate = useNavigate();
+
     useEffect(()=>{
         let email = sessionStorage.getItem('email')
         let userData = sessionStorage.getItem('userData')
@@ -17,6 +18,7 @@ const Cart = ({cart,setCart}) => {
   
 
     const[CART,setCART] = useState([])
+    
 useEffect(()=>{
     setCART(cart)
 },[cart])

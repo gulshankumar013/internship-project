@@ -1,4 +1,4 @@
-/* payment.css */
+/* 
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f0f2f5;
@@ -23,6 +23,175 @@ body {
 
 .payment-container h1 {
   margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-container h1 i {
+  margin-right: 10px;
+  color: #007bff;
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #007bff;
+}
+
+.input-with-icon input {
+  width: 100%;
+  padding: 10px 10px 10px 30px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.input-with-icon input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.submit-btn {
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-btn i {
+  margin-right: 10px;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.submit-btn:active {
+  transform: scale(0.95);
+} */
+
+/* payment.css */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f2f5;
+}
+
+.payment-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust height as needed */
+  padding: 20px;
+}
+
+.payment-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px; /* Adjust max-width based on your layout needs */
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cart-details {
+  flex: 1;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.cart-details h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.item-description {
+  font-size: 14px;
+  color: #666;
+}
+
+.item-quantity {
+  font-size: 14px;
+  color: #555;
+}
+
+.item-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.total-amount {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.payment-details {
+  flex: 1;
+  padding: 20px;
+}
+
+.payment-container h1 {
   font-size: 24px;
   color: #333;
   display: flex;

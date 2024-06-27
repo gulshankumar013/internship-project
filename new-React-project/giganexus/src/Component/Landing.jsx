@@ -11,6 +11,7 @@ import axios from "axios";
 
 const api = "http://localhost:5164/fetchTechnexusCard";
 const trandingApi = "http://localhost:5164/fetchTrandingProduct";
+const offerTopBrand = "http://localhost:5164/fetchTopBrandProduct";
 
 
 const divStyle = {
@@ -145,6 +146,33 @@ const Landing = ({ product, trending, brand, addToCart, addToWishlist }) => {
     }
   };
 
+
+
+  const [topBrandProduct, setTopBrandProduct] = useState([]);
+  useEffect(() => {
+    topBrand();
+  }, []);
+
+
+  const topBrand = async () => {
+    try {
+      const response = await axios.post(offerTopBrand, { eventID: "1001" });
+      console.log("API Response:", response.data); // Log the entire response
+      if (response.status === 200) {
+        const responseData = response.data;
+        if (responseData.rData && responseData.rData.users) {
+          setTopBrandProduct(responseData.rData.users);
+          console.log("Users:", responseData.rData.users);
+        } else {
+          console.log("No users data in response");
+        }
+      }
+    } catch (error) {
+      console.error("Error fetching users:", error);
+    }
+  };
+
+
   return (
     <>
       <div className="slide-container">
@@ -253,9 +281,9 @@ const Landing = ({ product, trending, brand, addToCart, addToWishlist }) => {
           <p>Offer's On Top Brand's</p>
         </div>
         <div className="parent3">
-          {brand.map((productItem, productIndex) => (
+          {topBrandProduct.map((productItem, productIndex) => (
             <div onClick={() => toggle(productItem)} className="child1" key={productIndex}>
-              <div className="card-box1"><img src={productItem.url} alt="" /></div>
+              <div className="card-box1"><img src={productItem.image} alt="" /></div>
               <div className="card-box2">{productItem.name}</div>
               <div className="card-box3">{productItem.discount}</div>
               <div className="card-box4">
