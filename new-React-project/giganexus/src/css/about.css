@@ -1,4 +1,5 @@
 .about-page{
+    background-color: white;
     height: 100vh;
     width: 100%;
     /* border: 1px solid black; */
@@ -77,9 +78,10 @@
     background-size: cover;
 }
 .about-parent4{
+    background-color: white;
     height: 50%;
     width: 100%;
-    margin-top: 4%;
+   
     display: flex;
     align-items: center;
     /* border: 1px solid black; */
@@ -93,6 +95,7 @@
     font-weight: 700;
 }
 .about-parent4 p{
+    background-color: white;
     font-size: large;
     font-family: 'Rubik';
     color: #4B4B4B;
@@ -129,7 +132,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #515355;
+    background-color:white;
 
 }
 .about-page2-parent{
@@ -308,6 +311,7 @@ font-weight: 300;
 }
 
 .about-page3{
+    background-color: white;
         height: 100%;
         width: 100%;
         background-image: url(../assests/abbbg25.jpg);
@@ -379,6 +383,7 @@ font-weight: 300;
     color: #4B4B4B;
 }
 .about-page4{
+    background-color: white;
     height: 35%;
     width: 100%;
     /* border: 1px solid black; */
@@ -425,6 +430,7 @@ font-weight: 300;
     color: #4B4B4B;
 }
 .about-page5{
+    background-color: white;
     height: 80%;
     width: 100%;
     /* border: 1px solid rgb(109, 224, 15); */

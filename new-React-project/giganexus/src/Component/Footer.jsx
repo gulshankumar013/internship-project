@@ -75,7 +75,7 @@ const Footer = () => {
                                 <a className='footer-socical-logo' href=""><FiInstagram /></a>
                                 <a className='footer-socical-logo' href=""><FaTwitter/></a>
                             </div>
-                            <p>Please Show Your Appreciation by hitting the like button below </p>
+                            
                             <div style={{marginLeft:"44.5%",}}>
                            <a  href=""><AiFillLike/></a> 
                             </div>

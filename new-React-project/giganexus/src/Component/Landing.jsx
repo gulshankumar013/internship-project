@@ -7,11 +7,13 @@ import { CiHeart } from "react-icons/ci";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 
 const api = "http://localhost:5164/fetchTechnexusCard";
 const trandingApi = "http://localhost:5164/fetchTrandingProduct";
 const offerTopBrand = "http://localhost:5164/fetchTopBrandProduct";
+const INSERT_CART = "http://localhost:5164/cart";
 
 
 const divStyle = {
@@ -93,6 +95,7 @@ const Landing = ({ product, trending, brand, addToCart, addToWishlist }) => {
     bestSelling();
   }, []);
 
+  // this  axios is use for fetch best selling products
   const bestSelling = async () => {
     try {
       const response = await axios.post(api, { eventID: "1001" });
@@ -123,6 +126,8 @@ const Landing = ({ product, trending, brand, addToCart, addToWishlist }) => {
       reader.readAsDataURL(file);
     }
   };
+
+  // this  axios is use for fetch trending selling products
   const [trendingProduct, setTrendingProduct] = useState([]);
   useEffect(() => {
     trandingProduct();
@@ -147,6 +152,7 @@ const Landing = ({ product, trending, brand, addToCart, addToWishlist }) => {
   };
 
 
+  // this  axios is use for fetch topBrand  selling products
 
   const [topBrandProduct, setTopBrandProduct] = useState([]);
   useEffect(() => {
@@ -171,6 +177,67 @@ const Landing = ({ product, trending, brand, addToCart, addToWishlist }) => {
       console.error("Error fetching users:", error);
     }
   };
+
+ // this  axios is use for send the product in cart page
+ const [sendCart, setSendCart] = useState({
+  // user_id: "",
+  trending_product_id: "",
+  home_product_id: "",
+
+});
+
+
+//acsesing the sessionstorage for user id by converting the
+const addCart = async (e) => {
+  // e.preventDefault();
+  // console.log("e",e)
+  setSendCart({...sendCart,trending_product_id:e.id})
+
+  const userDataString = sessionStorage.getItem("userData");
+  // console.log(userDataString, 'userDataString');
+
+  if (!userDataString) {
+    console.error("User data not found in session storage.");
+    return;
+  }
+
+  const userData = JSON.parse(userDataString);
+  const user_id2 = userData.id;
+  // console.log(user_id2, 'user_id');
+  // console.log("trending_product_id",sendCart.trending_product_id)
+  // setSendCart({...sendCart,user_id:user_id2})
+  // console.log("user_id",sendCart.user_id)
+  // console.log("trending_product_id",sendCart.trending_product_id)
+
+  const payload = {
+    eventID: "1001",
+    addInfo: {
+      user_id: user_id2,
+      trending_product_id: sendCart.trending_product_id || null,
+      home_product_id: sendCart.home_product_id || null,
+    },
+  };
+
+
+ 
+
+  try {
+    const response = await axios.post(INSERT_CART,payload);
+    console.log(response.data, "api response"); // handle response
+    
+    // setShowPopup(true); // Show the popup after successful signup
+    console.log("response",response)
+    if(response.data.rData.rMessage==="Card already added"){
+      toast.warn("Card already added")
+    }else{
+      toast.success("Product added in Your Cart")
+    }
+    // toast.success('Card added suscesfull')
+  } catch (error) {
+    console.error("Error in adding card up:", error);
+    // Handle error
+  }
+};
 
 
   return (
@@ -252,7 +319,8 @@ const Landing = ({ product, trending, brand, addToCart, addToWishlist }) => {
                 <div className="child4-a"><FaIndianRupeeSign /></div>
                 <div className="child4-b">{productItem.price}</div>
               </div>
-              <div className="child4-c"><button onClick={(e) => { e.stopPropagation(); addToCart(productItem); }}>Add to Cart</button></div>
+              {/* <div className="child4-c"><button onClick={(e) => { e.stopPropagation(); addToCart(productItem); }}>Add to Cart</button></div> */}
+              <div className="child4-c"><button onClick={(e) => { e.stopPropagation(); addCart(productItem); }}>Add to Cart</button></div>
               <div className="card-box5"><Link style={{ color: '#0075FF' }} href=""><CiHeart style={{ fontSize: '30px' }} onClick={()=>{addToWishlist(productItem)}} /></Link></div>
             </div>
           ))}
@@ -271,7 +339,8 @@ const Landing = ({ product, trending, brand, addToCart, addToWishlist }) => {
                 <div className="child4-a"><FaIndianRupeeSign /></div>
                 <div className="child4-b">{productItem.price}</div>
               </div>
-              <div className="child4-c"><button onClick={(e) => { e.stopPropagation(); addToCart(productItem); }}>Add to Cart</button></div>
+              {/* <div className="child4-c"><button onClick={(e) => { e.stopPropagation(); addToCart(productItem); }}>Add to Cart</button></div> */}
+              <div className="child4-c"><button onClick={(e) => { e.stopPropagation(); addCart(productItem); }}>Add to Cart</button></div>
               <div className="card-box5"><Link style={{ color: '#0075FF' }} href=""><CiHeart style={{ fontSize: '30px' }} onClick={()=>{addToWishlist(productItem)}} /></Link></div>
             </div>
           ))}

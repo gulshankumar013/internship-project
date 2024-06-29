@@ -338,3 +338,75 @@
     text-decoration: underline;
 }
 
+/* Responsive Media Queries */
+@media screen and (max-width: 1200px) {
+    .child1 {
+        flex: 1 0 45%; /* Adjusted flex properties for better wrapping */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .child1 {
+        flex: 1 0 80%; /* Adjusted flex properties for better wrapping */
+    }
+
+    .landing-page {
+        padding: 20px; /* Added padding for better spacing */
+    }
+
+    #popup {
+        width: 80%; /* Adjusted width for smaller screens */
+        height: 70%; /* Adjusted height for smaller screens */
+    }
+
+    .popup-child,
+    .popup-child2 {
+        width: 100%; /* Adjusted width for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .child1 {
+        flex: 1 0 100%; /* Adjusted flex properties for full width on smaller screens */
+        min-width: 100%; /* Ensures full width on smaller screens */
+    }
+
+    .card-box1 {
+        margin-left: 0; /* Adjusted margin for full width on smaller screens */
+        width: 100%; /* Ensures full width on smaller screens */
+    }
+
+    .card-box2,
+    .card-box3 {
+        margin-left: 0; /* Adjusted margin for full width on smaller screens */
+    }
+
+    .child4-c {
+        margin-left: 0; /* Adjusted margin for full width on smaller screens */
+        width: 80%; /* Adjusted width for full width on smaller screens */
+    }
+
+    .card-box5 {
+        margin-left: auto; /* Moved to the right edge for better placement on smaller screens */
+    }
+
+    .popup-parent {
+        flex-direction: column; /* Changed to column layout for smaller screens */
+    }
+
+    .popup-child,
+    .popup-child2 {
+        width: 100%; /* Adjusted width for full width on smaller screens */
+        margin-top: 10px; /* Added margin for better spacing */
+    }
+
+    .popup-button {
+        margin-left: 0; /* Centered button for smaller screens */
+        width: 50%; /* Adjusted button width for smaller screens */
+    }
+
+    .popup-img {
+        width: 100%; /* Adjusted image width for full width on smaller screens */
+        height: auto; /* Adjusted image height for better responsiveness */
+    }
+}
