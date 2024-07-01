@@ -8,8 +8,7 @@
     display: flex;
     background-repeat: no-repeat;
     justify-content: flex-end;
-    /* for making scroling page provide relative */
-    /* position: relative; */
+    border: 1px solid black;
 } 
 .login-logo{
     margin-bottom: 1%;
@@ -156,24 +155,8 @@ transition: 0.3s;
     border: none;
     width: 20em;
     height: 10em;
-    /* border: 1px solid black; */
-    /* border-radius:1em;
-    height: 5em ;
-    width: 8em;
-    border: none;
-    background-image: linear-gradient( to left,#6FB1FC,#4364F7,#0052D4);
-    color: white; */
+   
 }
-
-
-
-/* for making scroling page provide relative 
-  #lroem{
-    position: absolute;
-    margin-top: 1000px;
-} */
-
-
 .download{
 	width: 9em;
 	height: 4em;

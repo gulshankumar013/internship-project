@@ -84,7 +84,7 @@ const Login = () => {
   return (
     <>
       <Nav />
-      <section className='login-page'>
+      <div className='login-page'>
         <div className='login-logo-slogan'>
           <div className='login-logo'></div>
           <div>
@@ -123,7 +123,7 @@ const Login = () => {
             </a>
           </div>
         </div>
-      </section>
+      </div>
       {showPopup && (
         <div className={`login-popup ${popupMessage === 'Login successful!' ? 'success' : 'error'}`}>
           <div className="login-popup-content">

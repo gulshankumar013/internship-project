@@ -175,7 +175,8 @@ fetchProfileImage()
       eventID: "1001",
       addInfo: {
         id:userData.id,
-        profile:newProfile.profile
+        profile:newProfile.profile,
+        address:newAddress.address
       },
     };
 
@@ -199,6 +200,7 @@ fetchProfileImage()
       eventID: "1001",
       addInfo: {
         id:userData.id
+
       },
     };
 
@@ -310,7 +312,7 @@ fetchProfileImage()
               ) : (
                 <>
                 <div className="profile-details-child-a"><h3>{userData.name}</h3></div>
-                  <div className="profile-details-child-c"><p>Address: {userData.address || "Not provided"}</p></div>
+                  <div className="profile-details-child-c"><p>Address: {userData.address}</p></div>
                   <div className="profile-details-child-c"><p>Email: {userData.email}</p></div>
                   <div className="profile-details-child-c"><p>Password: {userData.password}</p></div>
                   <div className="profile-details-child-c"><p>Mobile No: {userData.mobile}</p></div>

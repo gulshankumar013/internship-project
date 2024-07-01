@@ -36,7 +36,7 @@
   
   .wishlist-img {
     width: 100%;
-    height: 200px;
+    height: 185px;
     object-fit: cover;
    
   }
@@ -75,7 +75,7 @@
   }
   
   .add-to-cart-btn {
-    padding: 10px 20px;
+    padding: 15px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -83,7 +83,7 @@
   }
   .wish-remove-btn {
     margin-top: 2%;
-    padding: 10px 28px;
+    padding: 18px 28px;
     border: none;
     border-radius: 5px;
     cursor: pointer;

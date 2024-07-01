@@ -109,6 +109,10 @@ const Nav = ({ count, countwish }) => {
       navigate("/dasbord");
     }
   };
+  
+  let handelUser = ()=>{
+    navigate("/login?role=user")
+  }
 
   return (
     <>
@@ -128,18 +132,21 @@ const Nav = ({ count, countwish }) => {
               }
               {dropdownVisible && (
                 <div className='dropdown-content'>
-                  <NavLink to={"/login?role=user"}>User</NavLink>
+                  <button  className='dropdown-content-a' onClick={handelUser}>User</button>
                   <button className='dropdown-content-a' onClick={handelAdmin}>Admin</button>
                 </div>
               )}
             </div>
-
-            <NavLink to={'/cart'} className={(e) => e.isActive ? "blue" : " "}><IoCartOutline className='nav-icons' /> <sup>{count} </sup></NavLink>
-            <NavLink to={'/profile'} className={(e) => e.isActive ? "blue" : " "} ><PiUser className='nav-icons' /></NavLink>
-            <NavLink to={'/wishlist'} className={(e) => e.isActive ? "blue" : " "} ><IoIosHeartEmpty className='nav-icons' /><sup>{countwish} </sup></NavLink>
+              
+            
           </ul>
-
+          
           <div className='rightNav'>
+            {/* <NavLink to={'/cart'} className={(e) => e.isActive ? "blue" : " "}><IoCartOutline className='nav-icons' /> <sup>{count} </sup></NavLink> */}
+            <NavLink to={'/cart'} className={(e) => e.isActive ? "blue" : " "}><IoCartOutline className='nav-icons' /></NavLink>
+            <NavLink to={'/profile'} className={(e) => e.isActive ? "blue" : " "} ><PiUser className='nav-icons' /></NavLink>
+            {/* <NavLink to={'/wishlist'} className={(e) => e.isActive ? "blue" : " "} ><IoIosHeartEmpty className='nav-icons' /><sup>{countwish} </sup></NavLink> */}
+            <NavLink to={'/wishlist'} className={(e) => e.isActive ? "blue" : " "} ><IoIosHeartEmpty className='nav-icons' /></NavLink>
             <input type="text" name='search' id='search' placeholder='Search' />
             <button className='btn'>Search</button>
           </div>

@@ -82,59 +82,129 @@
 // };
 
 // export default Payment;
-
-
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/payment.css';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { FaTruckFast } from 'react-icons/fa6';
 
 const Payment = ({ cart }) => {
   const [cardNumber, setCardNumber] = useState('');
   const [expiryDate, setExpiryDate] = useState('');
   const [cvv, setCvv] = useState('');
   const [cardName, setCardName] = useState('');
+  const [cartItems, setCartItems] = useState([]);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setCartItems(cart || []);
+  }, [cart]);
+
+  useEffect(() => {
+    const userDataString = sessionStorage.getItem("userData");
+    if (!userDataString) {
+      navigate("/login");
+    } else {
+      const userData = JSON.parse(userDataString);
+      fetchCartItems(userData.id);
+    }
+  }, [navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     alert('Payment Successful!');
-    // Add your payment processing logic here
   };
 
-  console.log("cart",cart)
+  const fetchCartItems = async (userId) => {
+    try {
+      const payload = {
+        eventID: "1001",
+        addInfo: {
+          user_id: userId,
+        },
+      };
+
+      const response = await axios.post("http://localhost:5164/fetchcart", payload);
+      if (response.status === 200) {
+        let responseData = response.data.rData.cards[0];
+        if (responseData) {
+          const itemsWithQuantity = responseData.map(item => ({
+            ...item,
+            quantity: item.quantity || 1,
+          }));
+          setCartItems(itemsWithQuantity);
+        } else {
+          console.log("No cart items data in response");
+        }
+      } else {
+        console.log("Failed to fetch cart items");
+      }
+    } catch (error) {
+      console.error("Error fetching cart items:", error);
+    }
+  };
+
+  const calculateTotalAmount = () => {
+    if (!cartItems || cartItems.length === 0) return 0;
+    return cartItems.reduce((total, item) => {
+      return total + (item.trending_product_details.price * item.quantity);
+    }, 0);
+  };
+
+  const loadScript = (src) => {
+    return new Promise((resolve) => {
+      const script = document.createElement('script');
+      script.src = src;
+  
+      script.onload = () => {
+        resolve(true);
+      };
+  
+      script.onerror = () => {
+        resolve(false);
+      };
+  
+      document.body.appendChild(script);
+    });
+  };
+
+
+const handleScriptLoad = async () => {
+  const scriptLoaded = await loadScript('https://checkout.razorpay.com/v1/checkout.js');
+  console.log('Script loaded:', scriptLoaded);
+  // Handle script loaded state or any other logic here
+};
   return (
     <>
       <div className='payment-body'>
         <div className="payment-container">
           <div className="cart-details">
             <h2>Cart Details</h2>
-            {cart && cart.length > 0 ? (
-              cart.map((cartItem, cartIndex) => (
+            {cartItems.length > 0 ? (
+              cartItems.map((cartItem, cartIndex) => (
                 <div key={cartIndex} className='cart-item'>
-                  <img src={cartItem.image} alt={cartItem.name} />
+                  <img src={cartItem.trending_product_details.image} alt={cartItem.name} />
                   <div className="item-details">
-                    <span className="item-name">{cartItem.name}</span><br />
+                    <span className="item-name">{cartItem.trending_product_details.name}</span><br />
                     <span className="item-description">{cartItem.description}</span><br />
-                    <span className="item-price">Rs. {cartItem.price * cartItem.quantity}</span>
+                    <span className="item-price">Rs. {cartItem.trending_product_details.price * cartItem.quantity}</span>
                   </div>
                   <div className="quantity">
-                    <button onClick={() => {
-                      const updatedCart = cart.map((item, index) =>
-                        index === cartIndex ? { ...item, quantity: Math.max(item.quantity - 1, 0) } : item
-                      );
-                      setCart(updatedCart); // Ensure setCart is defined and properly updates state
-                    }}>-</button>
                     <span className="item-quantity">{cartItem.quantity}</span>
-                    <button onClick={() => {
-                      const updatedCart = cart.map((item, index) =>
-                        index === cartIndex ? { ...item, quantity: item.quantity + 1 } : item
-                      );
-                      setCart(updatedCart); // Ensure setCart is defined and properly updates state
-                    }}>+</button>
                   </div>
                 </div>
               ))
             ) : (
               <p>Your cart is empty.</p>
             )}
+            <div className="delivery-info">
+              <i><FaTruckFast/></i>
+              <span> Item will be delivered within 5 working days..</span>
+            </div>
+            <div className="total-amount">
+              <h3>Total Amount: Rs. {calculateTotalAmount()}</h3>
+            </div>
           </div>
           <div className="payment-details">
             <h1><i className="fas fa-credit-card"></i> Payment Details</h1>
@@ -148,7 +218,7 @@ const Payment = ({ cart }) => {
                     id="cardNumber"
                     value={cardNumber}
                     onChange={(e) => setCardNumber(e.target.value)}
-                    required
+                    
                     maxLength="16"
                   />
                 </div>
@@ -162,7 +232,7 @@ const Payment = ({ cart }) => {
                     id="expiryDate"
                     value={expiryDate}
                     onChange={(e) => setExpiryDate(e.target.value)}
-                    required
+                   
                     placeholder="MM/YY"
                   />
                 </div>
@@ -176,7 +246,7 @@ const Payment = ({ cart }) => {
                     id="cvv"
                     value={cvv}
                     onChange={(e) => setCvv(e.target.value)}
-                    required
+                    
                     maxLength="3"
                   />
                 </div>
@@ -190,11 +260,11 @@ const Payment = ({ cart }) => {
                     id="cardName"
                     value={cardName}
                     onChange={(e) => setCardName(e.target.value)}
-                    required
+                    
                   />
                 </div>
               </div>
-              <button type="submit" className="submit-btn"><i className="fas fa-check-circle"></i> Pay Now</button>
+              <button type="submit" className="submit-btn" onClick={()=>{handleScriptLoad}}><i className="fas fa-check-circle"></i> Pay Now</button>
             </form>
           </div>
         </div>

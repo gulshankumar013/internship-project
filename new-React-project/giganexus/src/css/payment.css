@@ -115,6 +115,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   height: 100vh; /* Adjust height as needed */
   padding: 20px;
 }
@@ -149,8 +150,8 @@ body {
 }
 
 .cart-item img {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   margin-right: 20px;
 }
@@ -184,6 +185,15 @@ body {
 .total-amount {
   margin-top: 20px;
   text-align: right;
+}
+
+.total-amount h3{
+  font-size: x-large;
+}
+
+.delivery-info{
+  padding: 2%;
+  color: green;
 }
 
 .payment-details {

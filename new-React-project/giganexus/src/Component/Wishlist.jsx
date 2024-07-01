@@ -35,7 +35,7 @@ const Wishlist = ({wishlist,addToCart, setWishlist}) => {
                         <div className="wishlist-details">
                         <img src={wishlistItem.image} alt={wishlistItem.name}   className="wishlist-img"/> </div>
                     <div className='wishlist-name'>{wishlistItem.name}</div>
-                    <div className='wishlist-description'>{wishlistItem.description}</div>
+                    <div className='wishlist-description'>{wishlistItem.discription}</div>
                     <div className='wishlist-price'>{wishlistItem.price}</div>
                     <div className='wishlist-button-parent'>
                     <div className="wishlist-buttons">

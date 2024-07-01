@@ -396,13 +396,6 @@ const Cart = ({ cart, setCart }) => {
     setCartItems(cart);
   }, [cart]);
 
-  const removeFromCart = (index) => {
-    const updatedCart = [...cartItems];
-    updatedCart.splice(index, 1);
-    setCartItems(updatedCart);
-    setCart(updatedCart); // Update parent component's cart state if needed
-  };
-
   const updateCartItemQuantity = (index, newQuantity) => {
     if (newQuantity <= 0) return; // Prevent quantity from becoming zero or negative
     const updatedCart = cartItems.map((item, idx) =>
@@ -421,15 +414,13 @@ const Cart = ({ cart, setCart }) => {
         },
       };
 
-      const response = await axios.post(
-        "http://localhost:5164/fetchcart",
-        payload
-      );
+      // this api use for fetch cart details
+      const response = await axios.post("http://localhost:5164/fetchcart", payload);
       if (response.status === 200) {
         let responseData = response.data.rData.cards[0];
         if (responseData) {
           // Ensure each item has a default quantity of 1 if not already set
-          const itemsWithQuantity = responseData.map(item => ({
+          const itemsWithQuantity = responseData.map((item) => ({
             ...item,
             quantity: item.quantity || 1,
           }));
@@ -445,12 +436,39 @@ const Cart = ({ cart, setCart }) => {
     }
   };
 
+  //this api use for remove item from cart
+  const handleDelete = async (trending_product_id) => {
+    try {
+      const response = await axios.post("http://localhost:5164/deletecart", {
+        eventID: "1001",
+        addInfo: {
+          trending_product_id: trending_product_id,
+        },
+      });
+      console.log("Delete Response:", response.data); // Log the entire response
+      if (response.status === 200) {
+        const responseData = response.data;
+        if (responseData.rData.rMessage === "DELETE SUCCESSFULLY.") {
+          const updatedCart = cartItems.filter(
+            (item) => item.trending_product_details.id !== trending_product_id
+          );
+          setCartItems(updatedCart);
+          setCart(updatedCart); // Update parent component's cart state if needed
+          console.log(`Item with ID ${trending_product_id} deleted successfully`);
+        } else {
+          console.log("Failed to delete item");
+        }
+      }
+    } catch (error) {
+      console.error("Error deleting item:", error);
+    }
+  };
+
   const calculateTotalAmount = () => {
     return cartItems.reduce(
       (total, item) =>
         total +
-        (item.trending_product_details.price || 0) *
-          (item.quantity || 0),
+        (item.trending_product_details.price || 0) * (item.quantity || 0),
       0
     );
   };
@@ -459,65 +477,75 @@ const Cart = ({ cart, setCart }) => {
     <div className="cartpage-main">
       <div className="cartpage">
         <h3>Shopping Cart</h3>
-        {cartItems.map((cartItem, cartIndex) => (
-          <div className="page" key={cartIndex}>
-            <div className="page-child">
-              <img
-                src={cartItem.trending_product_details.image}
-                alt={cartItem.trending_product_details.name}
-              />
-              <div className="item-details">
-                <span className="item-name">
-                  {cartItem.trending_product_details.name}
-                </span>
-                <br />
-                <span className="item-description">
-                  {cartItem.trending_product_details.description}
-                </span>
-                <span className="item-price">
-                  Rs. {cartItem.trending_product_details.price}
-                </span>
+        {cartItems.length === 0 ? (
+          <p>Your cart is empty.</p>
+        ) : (
+          <>
+            {cartItems.map((cartItem, cartIndex) => (
+              <div className="page" key={cartIndex}>
+                <div className="page-child">
+                  <img
+                    src={cartItem.trending_product_details.image}
+                    alt={cartItem.trending_product_details.name}
+                  />
+                  <div className="item-details">
+                    <span className="item-name">
+                      {cartItem.trending_product_details.name}
+                    </span>
+                    <br />
+                    <span className="item-description">
+                      {cartItem.trending_product_details.description}
+                    </span>
+                    <span className="item-price">
+                      Rs. {cartItem.trending_product_details.price}
+                    </span>
+                  </div>
+                  <div className="quantity">
+                    <button
+                      onClick={() =>
+                        updateCartItemQuantity(cartIndex, cartItem.quantity - 1)
+                      }
+                    >
+                      -
+                    </button>
+                    <span className="item-quantity">{cartItem.quantity}</span>
+                    <button
+                      onClick={() =>
+                        updateCartItemQuantity(cartIndex, cartItem.quantity + 1)
+                      }
+                    >
+                      +
+                    </button>
+                  </div>
+                  <button
+                    className="remove-btn"
+                    onClick={() =>
+                      handleDelete(cartItem.trending_product_details.id)
+                    }
+                  >
+                    Remove
+                  </button>
+                </div>
               </div>
-              <div className="quantity">
-                <button
-                  onClick={() =>
-                    updateCartItemQuantity(cartIndex, cartItem.quantity - 1)
-                  }
-                >
-                  -
-                </button>
-                <span className="item-quantity">{cartItem.quantity}</span>
-                <button
-                  onClick={() =>
-                    updateCartItemQuantity(cartIndex, cartItem.quantity + 1)
-                  }
-                >
-                  +
-                </button>
-              </div>
-              <button
-                className="remove-btn"
-                onClick={() => removeFromCart(cartIndex)}
-              >
-                Remove
-              </button>
+            ))}
+            <div className="amount">
+              <h2>Total Amount = Rs. {calculateTotalAmount()}</h2>
             </div>
-          </div>
-        ))}
-        <div className="amount">
-          <h2>Total Amount = Rs. {calculateTotalAmount()}</h2>
-        </div>
-        <div className="cart-payment">
-          <Link to={"/payment"}>
-            <button className="cart-payment-button">Make Payment</button>
-          </Link>
-        </div>
+            <div className="cart-payment">
+              <Link to={"/payment"}>
+                <button className="cart-payment-button">Make Payment</button>
+              </Link>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
 };
 
 export default Cart;
+
+
 
 
 
